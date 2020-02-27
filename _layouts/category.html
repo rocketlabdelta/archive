@@ -1,0 +1,23 @@
+---
+layout: page
+---
+
+<ul class="post-listing">
+  {% for post in site.categories[page.tag] %}
+  <li class="post-summary">
+    <a href="{{ post.url }}" class="post-link">
+      <span class="post-title">{{ post.title }}</span>
+      {{ post.description }}
+    </a>
+    <nav>
+      <ul class="post-meta">
+      {% assign sortedCategories = post.categories | sort %}
+      {% for category in sortedCategories %}
+      <li class="post-tag"><a href="{{ category | absolute_url }}"><small>{{ category }}</small></a></li>
+      {% endfor %}
+      <li class="post-date"><small>{{ post.date | date: "%Y-%m-%d" }}</small></li>
+      </ul>
+    </nav>
+  </li>
+  {% endfor %}
+</ul>
