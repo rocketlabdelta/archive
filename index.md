@@ -5,4 +5,4 @@
 layout: default
 ---
 
-Rocket Magazine
+Rockets Magazine
